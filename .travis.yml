@@ -2,11 +2,12 @@ language: node_js
 node_js:
 - v7
 - v6
+before_deploy: cd dist && zip inject-template
 deploy:
   provider: releases
   api_key:
     secure: CWE/mc+uZqqiXvZbUoh3U1sZDX+Klks1lTVmvypcjUGCrEeMHMus2Ry/AJ3NXWXSViZum55LvMup+R8QzTEYF54KUmNoWFsHOeeyUDT5wTRFDBqL9yec3ee04+gJMQUM0s7UcSjxn468IVeoaENCkHk6ha/iwS0ZX3WAAjuoAWM5N4C3si/7r0WvxseLAYQ/LMDeJ/027uTdftueS3cYvCDIxTppkEJ2cStXHJDLytP5M686wrlDiJZKoj5cYT1XOeGrHZ9RN7QbGDLeWnP1lUSKdz1SVKYLZ6nC/fXFF/38FceuRbzp3En59+4F28bVvmsHfleSb0r7tvRfms3Bub3l2H1y9fCC4F0TXRU9XeTNYUB/a9QwbX8s1C4aCK5zQpnGawBdZlyuxdvnUa348a4WX1zp7+CRCfqdm2tqOYxHn5/6I0tFJSk+pzG/TepB+/uaNGImPGDA6JF6PlVFRLqc+OuijDLJHFv3HNfKjJ6Z72O3AJBvEsbFSjtE7w8d+sMY//nKU8vPeAG22WUVwThMgE5Ou01VdPLCInkeOI7+GHMiH3P1ors03Kcbl3DTAIc3v/SX6Juo2UFMZh3oGmxoMGDNIzndycFhATSeD77WMCL6TYFEasOs00c37fsHYNh+uLsqFonl8dtjgN1r3lxUC8j1zYSQHIZhBozNRCI=
-  file: dist/index.js
+  file: dist/inject-template.zip
   skip_cleanup: true
   on:
     repo: VandeurenGlenn/inject-template
