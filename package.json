@@ -53,7 +53,7 @@
       "external-helpers"
     ]
   },
-  "repository": "VandeurenGlenn/inject-template",
+  "repository": "https://github.com/VandeurenGlenn/inject-template",
   "scripts": {
     "prepublish": "gulp prepublish",
     "test": "gulp"
