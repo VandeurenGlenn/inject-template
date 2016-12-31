@@ -2,7 +2,7 @@ language: node_js
 node_js:
 - v7
 - v6
-before_deploy: cd dist && zip inject-template
+before_deploy: cd dist && zip inject-template.zip index.js && cd ../
 deploy:
   provider: releases
   api_key:
