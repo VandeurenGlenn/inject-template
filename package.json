@@ -1,6 +1,6 @@
 {
   "name": "inject-template",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Inject template into innerHTML",
   "homepage": "",
   "author": {
