@@ -1,8 +1,8 @@
 'use strict';
 class TestElRoot {
   constructor() {
-    // @template
     this.root = this.attachShadow({mode: 'open'});
+    // @template
     this.someFunction();
   }
   someFunction() {
