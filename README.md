@@ -8,12 +8,72 @@ $ npm install --save inject-template
 ```
 
 ## Usage
+- An template tag in the desired element <sup>1</sup>
+- An html template <sup>2</sup>
 
 ```js
 var injectTemplate = require('inject-template');
 
-injectTemplate('Rainbow');
+injectTemplate.inject({path: 'rainbow.js'});
 ```
+
+### result
+```js
+class Rainbow extends HTMLElement {
+  constructor() {
+    super();
+    this.innerHTML = 'BIG RAINBOW';
+  }
+  ...
+}
+```
+
+#### rainbow.js <sup>1</sup>
+```js
+class Rainbow extends HTMLElement {
+  constructor() {
+    super();
+    // @template
+  }
+  ...
+}
+```
+
+#### rainbow.html <sup>2</sup>
+```html
+<template>
+  BIG RAINBOW
+</template>
+```
+
+## API
+
+### injectTemplate.inject({options})
+### injectTemplate.injectSync({options})
+#### options
+
+#### path
+Type: `string`<br>
+Default: `null`
+
+Path to file containing the template tag
+
+#### templatePath
+Type: `string`<br>
+Default: `null`
+
+Path to the template (use when your template is in another directory).
+
+*When undefined inject-template assumes the template in in the same directory of the element*
+
+#### content
+Type: `string`<br>
+Default: `null`
+
+The content of the element (used in [gulp-inject-html-template](https://github.com/VandeurenGlenn/gulp-inject-html-template))
+
+*When streaming files, you can pass trough the content so inject-template doesn't need to read the element.*
+
 ## License
 
 MIT © [Glenn Vandeuren]()
