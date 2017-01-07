@@ -13,7 +13,9 @@
   ],
   "main": "dist/index.js",
   "keywords": [
-    ""
+    "inject",
+    "template",
+    "inject-template"
   ],
   "devDependencies": {
     "babel-plugin-external-helpers": "^6.18.0",
