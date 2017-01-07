@@ -14,7 +14,8 @@ $ npm install --save inject-template
 ```js
 var injectTemplate = require('inject-template');
 
-injectTemplate.inject({path: 'rainbow.js'});
+let result = injectTemplate.inject({path: 'rainbow.js'});
+// dosomething with result ...
 ```
 
 ### result
