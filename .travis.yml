@@ -7,7 +7,7 @@ cache:
     - node_modules
     - bower_components
 before_script:
-- npm install -g backed
+- npm install -g backed-cli
 - npm run build
 script:
 - npm run test

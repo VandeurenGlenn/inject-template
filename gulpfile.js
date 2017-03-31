@@ -8,13 +8,7 @@ const istanbul = require('gulp-istanbul');
 const nsp = require('gulp-nsp');
 const plumber = require('gulp-plumber');
 const coveralls = require('gulp-coveralls');
-const {rollup} = require('rollup');
-const babel = require('rollup-plugin-babel');
-const {mkdirSync, writeFileSync} = require('fs');
-const del = require('del');
 const isparta = require('isparta');
-
-let cache;
 
 gulp.task('static', function () {
   return gulp.src(['**/*.js', '!gulpfile.js'])
