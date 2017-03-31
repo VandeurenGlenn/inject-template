@@ -14,7 +14,7 @@ $ npm install --save inject-template
 ```js
 var injectTemplate = require('inject-template');
 
-let result = injectTemplate.inject({path: 'rainbow.js'});
+let result = injectTemplate.inject({path: 'rainbow.js'}) // injects content from rainbow.html
 // dosomething with result ...
 ```
 
@@ -34,7 +34,7 @@ class Rainbow extends HTMLElement {
 class Rainbow extends HTMLElement {
   constructor() {
     super();
-    // @template
+    // @template rainbow
   }
   ...
 }
@@ -45,6 +45,20 @@ class Rainbow extends HTMLElement {
 <template>
   BIG RAINBOW
 </template>
+```
+
+### Named templates
+```js
+var injectTemplate = require('inject-template');
+
+let result = injectTemplate.inject({path: 'rainbow.js', name: 'rainbow-template'}) // injects content from rainbow-template.html
+```
+
+### Custom templates path
+```js
+var injectTemplate = require('inject-template');
+
+let result = injectTemplate.inject({path: 'rainbow.js', templatePath: 'templates'}) // injects content from templates/rainbow.html
 ```
 
 ## API
