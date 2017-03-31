@@ -17,7 +17,7 @@ const isparta = require('isparta');
 let cache;
 
 gulp.task('static', function () {
-  return gulp.src('**/*.js')
+  return gulp.src(['**/*.js', '!gulpfile.js'])
     .pipe(excludeGitignore())
     .pipe(eslint())
     .pipe(eslint.format())
@@ -41,7 +41,7 @@ gulp.task('pre-test', function () {
 gulp.task('test', ['pre-test'], function (cb) {
   var mochaErr;
 
-  gulp.src('test/**/*.js')
+  gulp.src('test/index.js')
     .pipe(plumber())
     .pipe(mocha({reporter: 'spec'}))
     .on('error', function (err) {
@@ -66,27 +66,5 @@ gulp.task('coveralls', ['test'], function () {
     .pipe(coveralls());
 });
 
-gulp.task('rollup', ['clean'], function () {
-  return rollup({
-    entry: 'lib/index.js',
-     // Use the previous bundle as starting point.
-    cache: cache
-  }).then(bundle => {
-    var result = bundle.generate({
-        // output format - 'amd', 'cjs', 'es', 'iife', 'umd'
-      format: 'cjs',
-      plugins: [babel()]
-    });
-     // Cache our bundle for later use (optional)
-    cache = bundle;
-    mkdirSync('dist/');
-    writeFileSync('dist/index.js', result.code);
-  });
-});
-
-gulp.task('clean', function () {
-  return del('dist');
-});
-
-gulp.task('prepublish', ['nsp', 'rollup']);
+gulp.task('prepublish', ['nsp']);
 gulp.task('default', ['static', 'test', 'coveralls']);
