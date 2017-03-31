@@ -2,7 +2,7 @@
 class TestElRoot {
   constructor() {
     this.root = this.attachShadow({mode: 'open'});
-    // @template
+    // @template test-el-root
     this.someFunction();
   }
   someFunction() {
