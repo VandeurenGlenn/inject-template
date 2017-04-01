@@ -1,6 +1,6 @@
 {
   "name": "inject-template",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Inject template into innerHTML",
   "homepage": "",
   "author": {
@@ -9,9 +9,11 @@
     "url": ""
   },
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "main": "dist/index.js",
+  "jsnext": "src/index.js",
   "keywords": [
     "inject",
     "template",
